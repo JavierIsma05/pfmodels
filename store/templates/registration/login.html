@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce - Inicia Sesión o registrate</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="col1">
+            <img src="{% static 'images/logojkl.jpeg' %}" alt="" class="logo">
+            <p>EcommerceXavi te permite ....</p>
+        </div>
+        <div class="col2">
+            <form action="" method="post">
+
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Usuario">
+                <input type="password" name="password" placeholder="Contraseña">
+                <input class="btn btn-success" type="submit" value="Iniciar Sesion" href="http://127.0.0.1:8000/">
+                
+                <a href="#" class="olvidaste">¿Olvidaste la contraseña?</a>
+                <hr>
+                <a href="http://127.0.0.1:8000/registro/" class="nueva">Crear Cuenta nueva</a>
+
+            </form>
+            <p><strong>Crea una página</strong> para una celebridad, una marca o un negocio</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

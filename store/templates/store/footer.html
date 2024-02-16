@@ -1,0 +1,61 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+<footer class="footer">
+    <div class="wrap-footer">
+      <div class="text-element-footer element-footer">
+        <h3 class="main-c">EcommerceXavi</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto vitae laborum laboriosam repellendus a
+          provident distinctio dignissimos id tenetur, esse aperiam amet voluptate! Nesciunt ratione rerum quos
+          doloribus! Vitae, accusantium!</p>
+      </div>
+      <div class="text-element-footer element-footer link-elements-footer">
+        <h5 class="foh5">Tienda</h5>
+        <ul>
+          <li><a href="">Novias</a></li>
+          <li><a href="">Quinceañeras</a></li>
+          <li><a href="">Casual</a></li>
+        </ul>
+      </div>
+      <div class="text-element-footer element-footer link-elements-footer">
+        <h5 class="foh5">Acerca de</h5>
+        <ul>
+          <li><a href="{% url 'store' %}">Inicio</a></li>
+          <li><a href="{% url 'contact' %}">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="rrss-element-footer element-footer">
+        <h5 class="foh5">Redes Sociales</h5>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/">
+              <img src="{% static 'images/rs/facebook.png' %}" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/">
+              <img src="{% static 'images/rs/instagram.png' %}" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com/">
+              <img src="{% static 'images/rs/twitter.png' %}" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-creds">
+      <div class="copy-creds">
+        <p>@2024 · Todos los derechos reservados. </p>
+      </div>
+      <div class="legal-creds">
+        <ul>
+          <li><a href="#">Politica de Provacidad</a></li>
+          <li><a href="#">Politica de Cookies</a></li>
+          <li><a href="#">Aviso Legal</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </footer>

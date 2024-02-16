@@ -1,0 +1,17 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container-form">
+    <h1>Product List</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Filtro</button>
+    </form>
+    <ul>
+        {% for product in products %}
+        <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<div class="container-form">
+    <div class="info-form">
+        <h2>Contactanos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, itaque debitis. Quibusdam, consequatur
+            tempora sunt laborum omnis praesentium. Fugit enim quos quibusdam excepturi alias doloremque molestias
+            laudantium aut, dignissimos placeat!</p>
+        <a href=""><img src="{% static 'images/rs/telefono.png' %}" alt="">123-456-789</a>
+        <a href=""><img src="{% static 'images/rs/email.png' %}" alt="">email.@email.com</a>
+        <a href=""><img src="{% static 'images/rs/ubicacion.png' %}" alt="">Loja, Ecuador</a>
+        
+    </div>
+    <form action="" autocomplete="off">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" class="campo">
+        <input type="email" name="email" placeholder="Ingresa tu correo" class="campo">
+        <textarea name="mensaje" placeholder="Ingresa tu mensaje"></textarea>
+        <input type="submit" name="enviar" value="Enviar mensaje" class="btn-enviar">
+    
+    </form>
+</div>
+{% endblock %}
