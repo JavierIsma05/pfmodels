@@ -1,0 +1,13 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <h2>{{ product.name }}</h2>
+        <img src="{{ product.imageURL }}">
+        <p>Precio: ${{ product.price }}</p>
+        <!-- Otros detalles del producto -->
+
+
+        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Añadir al carrito</button>
+    </div>
+{% endblock %}

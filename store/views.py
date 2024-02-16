@@ -22,8 +22,8 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 def contact(request):
-    context={}
-    return render(request,'store/contact.html',context)
+    
+    return render(request,'store/contact.html')
 
 def cart(request):
 	data = cartData(request)
@@ -99,9 +99,11 @@ def processOrder(request):
 
 	return JsonResponse('Payment submitted..', safe=False)
 
-def verproductos(request):
-	context ={}
-	return render(request, 'store/productosvista.html', context)
+from django.shortcuts import render, get_object_or_404
+
+def ver_producto(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'store/ver_producto.html', {'product': product})
 
 
 from .forms import CategoryForm
@@ -139,7 +141,57 @@ def registro(request):
             user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
             login(request,user)
             messages.success(request,"Te has registrado correctamente")
-            return redirect(to="home")
+            return redirect(to="store")
         data["form"] = formulario
 
     return render(request,'registration/registro.html',data)
+
+
+#PAGO CON LA LIBRERIA PAYPAL
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
+from django.shortcuts import render
+import paypalrestsdk
+# FUNCION PARA PROCESAR EL PAGO
+def procesar_pago(request):
+    # Configura las credenciales de la API de PayPal
+    paypalrestsdk.configure({
+        "mode": "sandbox",  # Cambia a "live" en producción
+        "client_id": "AfAWMb3eb45g_wuXHhx6erxDt0AJCas2q7xoA58u8vQ4K5Nu4hdM5ncB3f1-9ptllf7Ola1oXg5JhCBh",
+        "client_secret": "EKkunv0QhiPJrodOWEDVPk9IYXXCg2BujK2qhqLu3Et5zqNmLuMO2yn0u_JJiuzWzHBq-g3J5JoHB-7A"
+    })
+
+    # Crea un objeto de pago
+    pago = paypalrestsdk.Payment({
+        "intent": "sale",
+        "payer": {"payment_method": "paypal"},
+        "redirect_urls": {
+            "return_url": "http://localhost:8000/pago/completado/",
+            "cancel_url": "http://localhost:8000/pago/cancelado/"
+        },
+        "transactions": [{
+            "item_list": {
+                "items": [{
+                    "name": "Producto Ejemplo",
+                    "sku": "item",
+                    "price": "0.10",
+                    "currency": "USD",
+                    "quantity": 1
+                }]
+            },
+            "amount": {
+                "total": "0.10",
+                "currency": "USD"
+            },
+            "description": "Descripción del producto."
+        }]
+    })
+
+    # Crea el pago
+    if pago.create():
+        for link in pago.links:
+            if link.method == "REDIRECT":
+                redirect_url = link.href
+                return HttpResponseRedirect(redirect_url)
+    else:
+        return HttpResponse("Ocurrió un error al procesar el pago.")
