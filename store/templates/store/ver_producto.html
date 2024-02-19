@@ -1,13 +1,45 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-    <div>
-        <h2>{{ product.name }}</h2>
-        <img src="{{ product.imageURL }}">
+
+<!--
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ product.imageURL }}" alt="Card image cap">
+    <div class="card-body">
+        <h5 style="text-align: center;">{{ product.name }}</h5>
         <p>Precio: ${{ product.price }}</p>
-        <!-- Otros detalles del producto -->
-
-
+        <p>Descripcion:</p>
         <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Añadir al carrito</button>
     </div>
+  </div>
+-->
+
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Vestido</h5>
+        <img class="card-img-top" src="{{ product.imageURL }}" alt="Card image cap">
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 style="text-align: center;"><strong>{{ product.name }}</strong></h5>
+        <p><a href="#" class="link-underline-primary"><strong>{{ product.category.name }}</strong></a></p>
+        <p>4.2 / 5<strong> 5,206</strong> rating</p>
+        <hr>
+        <p>Precio: ${{ product.price }}</p>
+        <p><strong>Descripcion:</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore odit itaque nemo dolores sint facilis cupiditate cumque repellat dignissimos pariatur quo natus placeat omnis architecto, magni dicta! Eligendi, incidunt voluptatem?</p>
+        <hr>
+        <h5><strong>Acerca de este vestido</strong></h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi temporibus delectus assumenda. Perspiciatis, hic laboriosam voluptates modi aute.</p>
+        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Añadir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

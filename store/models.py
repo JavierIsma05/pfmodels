@@ -24,6 +24,7 @@ class Product(models.Model):
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):

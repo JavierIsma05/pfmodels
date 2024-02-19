@@ -62,3 +62,26 @@ function addCookieItem(productId, action){
 	
 	location.reload()
 }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('eliminar-todo').addEventListener('click', function() {
+        if (confirm('¿Estás seguro de que deseas eliminar todos los productos?')) {
+            eliminarTodosLosProductos();
+        }
+    });
+
+    function eliminarTodosLosProductos() {
+        var productos = document.querySelectorAll('.product');
+        productos.forEach(function(producto) {
+            producto.parentNode.removeChild(producto);
+        });
+
+        // Actualizar el carrito eliminando todos los productos
+        cart = {}; // Vaciar el carrito
+
+        // Actualizar la cookie del carrito
+        document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+        // Recargar la página o actualizar la interfaz según sea necesario
+        location.reload();
+    }
+});

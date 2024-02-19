@@ -21,6 +21,7 @@ body {
 .logo {
     margin-top: 50px;
     width: 280px;
+    text-align: center;
 }
 
 /*Vamos con la columna 1*/
@@ -60,7 +61,7 @@ input {
 .btn {
     display: block;
     width: 100%;
-    background-color: #666740;
+    background-color: #2193b0;
     font-size: 20px;
     font-weight: bold;
     border: none;
@@ -85,7 +86,7 @@ hr{
     display: block;
     width: 200px;
     margin: auto;
-    background-color: #666740;
+    background-color: #2193b0;
     padding: 16px;
     border-radius: 2px;
     color: #fff;

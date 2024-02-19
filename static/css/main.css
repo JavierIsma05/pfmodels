@@ -5,7 +5,8 @@
 
 body {
 	margin: 0;
-	background-color: hsl(0, 0%, 100%);
+	/*background-color: hsl(0, 0%, 100%);*/
+	background-color: #ebc8b2 ;
 	/*position: relative;
 	padding-bottom: 20em;
 	min-height: 100vh;*/
@@ -15,7 +16,7 @@ body {
 }
 
 .navbar {
-	background-color: #666740;
+	background-color: #86A8E7;
 	/* Color rojo vino */
 }
 
@@ -134,7 +135,7 @@ h6 {
 ****************** */
 
 footer {
-	background-color: #666740dd;
+	background-color: #86A8E7;
 	color: #fbfbfb;
 }
 
@@ -145,9 +146,12 @@ footer ul {
 footer li {
 	list-style: none;
 }
-.main-c, .foh5{
+
+.main-c,
+.foh5 {
 	color: #fbfbfb;
 }
+
 .wrap-footer {
 	display: grid;
 	grid-template-columns: 30% 15% 15% 20%;
@@ -233,3 +237,7 @@ footer li {
 		flex-flow: column;
 	}
 }
+
+/* 
+****    ver producto       ***** 
+*/

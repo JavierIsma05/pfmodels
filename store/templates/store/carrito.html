@@ -17,6 +17,8 @@
                         <h5>Total:<strong>${{order.get_cart_total|floatformat:2}}</strong></h5>
                     </th>
                     <th>
+                        
+                        <a style="float:right; margin:5px;" id="eliminar-todo"  class="btn btn-danger" href="">Eliminar Todo</a>
                         <a style="float:right; margin:5px;" class="btn btn-success"
                             href="{% url 'checkout' %}">VerficarCompra</a>
                     </th>
@@ -52,4 +54,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}
