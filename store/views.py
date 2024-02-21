@@ -97,7 +97,7 @@ def processOrder(request):
 		zipcode=data['shipping']['zipcode'],
 		)
 
-	return JsonResponse('Payment submitted..', safe=False)
+	return JsonResponse('Pago enviado..', safe=False)
 
 from django.shortcuts import render, get_object_or_404
 
@@ -128,8 +128,9 @@ def product_list(request):
     return render(request, 'store/product_list.html', context)
 
 
+from django.views.generic import View
 #Registrarse como usuario
-def registro(request):
+def register(request):
     data = {
         'form': CustomUserCreationForm()
     }
@@ -141,11 +142,6 @@ def registro(request):
             #redirigir al home
             user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
             login(request,user)
-            messages.success(request,"Te has registrado correctamente")
             return redirect(to="store")
         data["form"] = formulario
-
-    return render(request,'registration/registro.html',data)
-
-
-
+    return render(request,'registration/register.html',data)

@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	/*background-color: hsl(0, 0%, 100%);*/
-	background-color: #ebc8b2 ;
+	background-color: #CFB53B ;
 	/*position: relative;
 	padding-bottom: 20em;
 	min-height: 100vh;*/
@@ -16,7 +16,7 @@ body {
 }
 
 .navbar {
-	background-color: #86A8E7;
+	background-color: #000080;
 	/* Color rojo vino */
 }
 
@@ -135,7 +135,7 @@ h6 {
 ****************** */
 
 footer {
-	background-color: #86A8E7;
+	background-color: #000080;
 	color: #fbfbfb;
 }
 

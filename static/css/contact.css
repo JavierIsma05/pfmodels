@@ -56,12 +56,12 @@
     font-size: 16px;
     border: none;
     outline: 0px;
-    background: #6dd5ed;
+    background: #2b2b89;
     color: white;
     border-radius: 3px;
     cursor: pointer;
     transition: all 300ms ease;
 }
 .container-form .btn-enviar:hover{
-    background: #2193b0;
+    background: #000080;
 }

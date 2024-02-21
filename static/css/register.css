@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    background-color: #CFB53B;
+}
+
+.contenedor {
+    max-width: 980px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.col1 {
+    width: 500px;
+    padding-right: 32px;
+}
+
+.col1 p {
+    font-size: 28px;
+}
+
+/*Vamos con la columna 2*/
+.col2 {
+    width: 400px;
+}
+form {
+    background-color: #fff;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 /10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin: 6px 0;
+    border: 1px solid #dddfe2;
+    border-radius: 12px;
+}

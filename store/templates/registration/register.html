@@ -5,16 +5,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ecommerce - Registrate</title>
+	<title>FashionFinesse-Registrate</title>
 	<link rel="stylesheet" href="{% static 'css/register.css' %}">
+	<link rel="icon" href="{% static 'images/logo.png' %}">
 </head>
 
 <body>
 	<div class="contenedor">
 		<div class="col1">
 			<img src="{% static 'images/authentication/register.png' %}" alt="">
+			<p>Registro de Usuarios</p>
 		</div>
 		<div class="col2">
+			<h2>Registro de usuarios</h2>
 			<form action="" method="post">
 				{% csrf_token %}
 				{{form}}

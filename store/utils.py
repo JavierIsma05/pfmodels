@@ -41,6 +41,8 @@ def cookieCart(request):
 			
 	return {'cartItems':cartItems ,'order':order, 'items':items}
 
+
+
 def cartData(request):
 	if request.user.is_authenticated:
 		customer = request.user.customer

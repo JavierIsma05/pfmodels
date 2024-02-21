@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>ElPalacioMiss</title>
+  <title>FashionFinesse</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
@@ -11,7 +11,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-  <link rel="icon" href="{% static 'images/LOGO.jpeg' %}">
+  <link rel="icon" href="{% static 'images/logo.png' %}">
 
 
   <script type="text/javascript">
@@ -57,7 +57,7 @@
 
     if (cart == undefined) {
       cart = {}
-      console.log('Cart Created!', cart)
+      console.log('Carrito Creado!', cart)
       document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
     }
     console.log('Cart:', cart)
@@ -71,7 +71,7 @@
 
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'store' %}">ElPalaciodelaMiss</a>
+      <a class="navbar-brand" href="{% url 'store' %}">FashionFinesse</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -107,7 +107,7 @@
             @{{user.username}}
           </a>
           {% else %}
-          <a href="{% url 'login' %}" class="btn btn-info">Iniciar Sesion</a>
+          <a href="{% url 'login' %}" class="nav-link active text-white">Iniciar Sesion</a>
 
 
 
@@ -213,7 +213,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-    
+<!--SCRIP PARA BUSCAR PRODCTOS-->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Manejar el envío del formulario de búsqueda

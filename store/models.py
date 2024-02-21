@@ -1,17 +1,27 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Create your models here.
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE, related_name = 'customer')
+    user = models.OneToOneField(User, unique=True, null=True, blank=True, on_delete=models.CASCADE, related_name='customer')
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+    
+@receiver(post_save, sender=User)
+def create_customer(sender, instance, created, **kwargs):
+    if created:
+        Customer.objects.create(user=instance)
 
+@receiver(post_save, sender=User)
+def save_customer(sender, instance, **kwargs):
+    instance.customer.save()
 
+#creando las demas clases
 class Category(models.Model):
     name = models.CharField(max_length=200)
 
