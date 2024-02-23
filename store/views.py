@@ -4,6 +4,7 @@ from django.contrib.auth import login,authenticate
 import json
 import datetime
 from .models import * 
+from .forms import * 
 from .utils import cookieCart, cartData, guestOrder
 from .forms import CustomUserCreationForm
 from .models import *
@@ -21,8 +22,19 @@ def store(request):
 	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store/store.html', context)
 
+def dashboard(request):
+	data = {
+		'form': ProductForm()
+	}
+	if request.method == 'POST':
+		formulario = ProductForm(data=request.POST,files=request.FILES)
+		if formulario.is_valid():
+			formulario.save()
+		else:
+			data["form"] = formulario	
+	return render(request,'store/dashboard.html',data)
+
 def contact(request):
-    
     return render(request,'store/contact.html')
 
 def cart(request):

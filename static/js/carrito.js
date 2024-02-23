@@ -1,4 +1,4 @@
-var updateBtns = document.getElementsByClassName('update-cart')
+/*var updateBtns = document.getElementsByClassName('update-cart')
 
 for (i = 0; i < updateBtns.length; i++) {
 	updateBtns[i].addEventListener('click', function(){
@@ -16,6 +16,67 @@ for (i = 0; i < updateBtns.length; i++) {
 			updateUserOrder(productId, action)
 		}
 	})
+}
+*/
+//APLICANDO EL PATRÓN MEMENTO
+// Paso 1: Identificar el estado relevante
+var cartState = {
+    items: [], // Lista de elementos en el carrito
+    totalPrice: 0 // Precio total del carrito
+};
+
+// Paso 2: Crear la clase Memento
+class CartMemento {
+    constructor(state) {
+        this.state = state;
+    }
+
+    getState() {
+        return this.state;
+    }
+}
+
+// Crear una variable para almacenar el último estado del carrito
+var lastCartState = null;
+
+// Función para guardar el estado del carrito como Memento
+function saveCartState() {
+    lastCartState = new CartMemento(Object.assign({}, cartState));
+}
+
+// Función para restaurar el estado del carrito desde un Memento
+function restoreCartState() {
+    if (lastCartState !== null) {
+        cartState = Object.assign({}, lastCartState.getState());
+    }
+}
+
+// Modificar el código existente para manejar el Memento
+var updateBtns = document.getElementsByClassName('update-cart');
+
+for (var i = 0; i < updateBtns.length; i++) {
+    updateBtns[i].addEventListener('click', function() {
+        var productId = this.dataset.product;
+        var action = this.dataset.action;
+        console.log('productId:', productId, 'Action:', action);
+
+        // Guardar el estado actual del carrito antes de realizar la actualización
+        saveCartState();
+
+        console.log('USER:', user);
+
+        if (user === 'User') {
+            addCookieItem(productId, action);
+        }
+        if (user === 'AnonymousUser') {
+            addCookieItem(productId, action);
+        } else {
+            updateUserOrder(productId, action);
+        }
+
+        // Restaurar el estado del carrito si es necesario
+        restoreCartState();
+    });
 }
 
 function updateUserOrder(productId, action){
@@ -124,6 +185,3 @@ document.addEventListener('DOMContentLoaded', function() {
 	}	
 });
 
-
-//USANDO EL PATRON COMMAND
-// Definir una clase Command para encapsular las acciones de actualización del carrito

@@ -1,0 +1,54 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+<div class="container">
+    <!--<div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">-->
+            <h2>Agregar Vestidos</h2>
+            <form class="formulario" action="" method="post" enctype="multipart/form-data" style="margin-top: 20px;">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form }}
+                </div>
+                <input type="reset" value="Cancelar" class="btn btn-secondary">
+                &nbsp;
+                <input type="submit" value="Guardar" class="btn btn-primary">
+            </form>
+            <!--
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+            <h2>Listado de Productos</h2>
+            <div class="table-responsive py-2">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Digital</th>
+                            <th>Imagen</th>
+                            <th>Categoría</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for form in forms %}
+                        <tr>
+                            <td>{{form.name}}</td>
+                            <td>{{data.price}}</td>
+                            <td>{{data.digital}}</td>
+                            <td>{{data.imageURL}}</td>
+                            <td>{{data.category}}</td>
+                            <td><a href="#" class="btn btn-info">Editar</a></td>
+                            <td><a href="#" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>-->
+</div>
+
+{% endblock content %}

@@ -17,5 +17,7 @@ urlpatterns = [
     # registros:
     path('register/',views.register,name='register'),
 	
+    # dashboard
+    path('dashboard/',views.dashboard,name='dashboard'),
 
 ]

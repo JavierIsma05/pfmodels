@@ -65,3 +65,42 @@
 .container-form .btn-enviar:hover{
     background: #000080;
 }
+@media (min-width: 768px) {
+    .container-form{
+        grid-template-columns: repeat(2, 1fr); /* Cambiado a 2 columnas */
+        grid-gap: 50px; /* Restablecido el espacio entre columnas */
+        margin-top: 90px; /* Restablecido el margen superior */
+    }
+
+    .container-form h2{
+        font-size: 35px; /* Restablecido el tamaño de fuente */
+    }
+
+    .container-form p{
+        font-size: 17px; /* Restablecido el tamaño de fuente */
+        line-height: 1.6;
+        margin-bottom: 30px; /* Restablecido el margen inferior */
+    }
+
+    .container-form a{
+        font-size: 17px; /* Restablecido el tamaño de fuente */
+        margin-bottom: 15px; /* Restablecido el margen inferior */
+    }
+
+    .container-form a i{
+        margin-right: 10px; /* Restablecido el margen derecho */
+    }
+
+    .container-form form .campo, textarea{
+        padding: 15px 10px; /* Restablecido el relleno */
+        font-size: 16px; /* Restablecido el tamaño de fuente */
+        margin-bottom: 20px; /* Restablecido el margen inferior */
+    }
+
+    .container-form form textarea{
+        min-width: 530px; /* Restablecido el ancho mínimo */
+        max-width: 530px; /* Restablecido el ancho máximo */
+        min-height: 140px; /* Restablecido la altura mínima */
+        max-height: 150px; /* Restablecido la altura máxima */
+    }
+}
