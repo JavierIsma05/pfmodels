@@ -19,5 +19,9 @@ urlpatterns = [
 	
     # dashboard
     path('dashboard/',views.dashboard,name='dashboard'),
+    path('roles/',views.roles,name='roles'),
+    path('agregarCategorias/',views.agregarCategorias,name='agregarCategorias'),
+    
+    path('agregarVestidos/',views.agregarVestidos,name='agregarVestidos'),
 
 ]

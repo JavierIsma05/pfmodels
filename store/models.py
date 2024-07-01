@@ -1,8 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
 # Create your models here.
+
+
 
 class Customer(models.Model):
     user = models.OneToOneField(User, unique=True, null=True, blank=True, on_delete=models.CASCADE, related_name='customer')
@@ -100,3 +103,21 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+
+class Stock(models.Model):
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.product.name} - {self.quantity} disponibles"
+
+    def increase_stock(self, amount):
+        self.quantity += amount
+        self.save()
+
+    def decrease_stock(self, amount):
+        if self.quantity >= amount:
+            self.quantity -= amount
+            self.save()
+        else:
+            raise ValueError("No hay suficiente stock disponible")

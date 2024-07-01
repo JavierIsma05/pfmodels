@@ -23,16 +23,8 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 def dashboard(request):
-	data = {
-		'form': ProductForm()
-	}
-	if request.method == 'POST':
-		formulario = ProductForm(data=request.POST,files=request.FILES)
-		if formulario.is_valid():
-			formulario.save()
-		else:
-			data["form"] = formulario	
-	return render(request,'store/dashboard.html',data)
+	
+	return render(request,'store/dashboard.html')
 
 def contact(request):
     return render(request,'store/contact.html')
@@ -112,6 +104,38 @@ def processOrder(request):
 	return JsonResponse('Pago enviado..', safe=False)
 
 from django.shortcuts import render, get_object_or_404
+
+def roles(request):
+	return render(request, 'store/roles.html',{})
+
+#agregar categorias
+def agregarCategorias(request):
+    if request.method == 'POST':
+        formulario = CategoryForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            # Si el formulario es válido, redirigir a la misma página para evitar reenvío de formulario
+            return redirect('agregarCategorias')
+    else:
+        formulario = CategoryForm()
+
+    categorias = Category.objects.all()
+
+    return render(request, 'store/categorias.html', {'form': formulario, 'categorias': categorias})
+
+#agregar vestidos
+def agregarVestidos(request):
+	if request.method == 'POST':
+		formulariox = ProductForm(request.POST,files=request.FILES)
+		if formulariox.is_valid():
+			formulariox.save()
+			# Si el formulario es válido, redirigir a la misma página para evitar reenvío de formulario
+			return redirect('agregarVestidos')
+	else:
+		formulariox = ProductForm() 
+	productos = Product.objects.all()
+	
+	return render(request, 'store/vestidos.html', {'form':formulariox, 'productos': productos})
 
 # funcion para ver el prodcuto en solitario
 def ver_producto(request, product_id):

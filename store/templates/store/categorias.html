@@ -1,0 +1,52 @@
+{% extends 'store/dashboard.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-5 col-xl-5">
+        <h2>Gestion de Categoria</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}">Nombre:</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h1>Listado de Categorias</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Poner la funcion for-->
+                    {% for categoria in categorias %}
+                    <tr>
+                        <td>{{ categoria.id }}</td>
+                        <td>{{ categoria.name }}</td>
+                        <td><a href="#" class="btn btn-info">Editar</a></td>
+                        <td><a href="#" class="btn btn-danger">Borrar</a></td>
+                    </tr>
+                    {% endfor %}
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

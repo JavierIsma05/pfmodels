@@ -1,0 +1,44 @@
+SonarQube plugins:
+  - C++ (Community) 2.0.6.2925 (cxx)
+  - SonarPython 1.14.1.3143 (python)
+  - SonarCSS 1.1.1.1010 (cssfamily)
+  - GitHub Authentication for SonarQube 1.5.0.870 (authgithub)
+  - JaCoCo 1.0.2.475 (jacoco)
+  - SonarGo 1.1.1.2000 (go)
+  - SonarKotlin 1.5.0.315 (kotlin)
+  - Svn 1.9.0.1295 (scmsvn)
+  - SonarJS 5.2.1.7778 (javascript)
+  - SonarRuby 1.5.0.315 (ruby)
+  - SonarScala 1.5.0.315 (sonarscala)
+  - Sonar R Plugin 0.2.2 (r)
+  - SonarC# 7.15.0.8572 (csharp)
+  - SonarJava 5.13.1.18282 (java)
+  - LDAP 2.2.0.608 (ldap)
+  - SonarHTML 3.1.0.1615 (web)
+  - Git 1.12.1.2064 (scmgit)
+  - SonarFlex 2.5.1.1831 (flex)
+  - SonarXML 2.0.1.2020 (xml)
+  - SAML 2.0 Authentication for SonarQube 1.2.0.682 (authsaml)
+  - SonarPHP 3.2.0.4868 (php)
+  - SonarTS 1.9.0.3766 (typescript)
+  - SonarVB 7.15.0.8572 (vbnet)
+Global server settings:
+  - sonar.core.id=BF41A1F2-AZBlmuW0pdanK-HmySfT
+  - sonar.core.startTime=2024-06-30T09:47:47-0500
+Project server settings:
+Project scanner properties:
+  - sonar.host.url=http://localhost:9000
+  - sonar.login=******
+  - sonar.projectBaseDir=C:\Users\Usuario iTC\Desktop\PF_Models\enviroment\ecommerce\store
+  - sonar.projectKey=Project-javi
+  - sonar.scanner.apiBaseUrl=http://localhost:9000/api/v2
+  - sonar.scanner.app=ScannerCLI
+  - sonar.scanner.appVersion=6.1.0.4477
+  - sonar.scanner.arch=amd64
+  - sonar.scanner.bootstrapStartTime=1719759328333
+  - sonar.scanner.home=C:\Users\Usuario iTC\Desktop\sonar-scanner-6.1.0.4477-windows-x64\bin\..
+  - sonar.scanner.os=windows
+  - sonar.scanner.wasEngineCacheHit=true
+  - sonar.sources=.
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\Usuario iTC\Desktop\PF_Models\enviroment\ecommerce\store\.scannerwork

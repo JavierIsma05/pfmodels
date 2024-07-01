@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,10 +10,9 @@
 .container {
     max-width: 600px;
     margin: 40px auto;
-    background-color: #fff;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);*/
 }
 
 h2 {
@@ -51,3 +51,4 @@ textarea {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
