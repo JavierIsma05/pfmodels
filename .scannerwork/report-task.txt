@@ -1,6 +1,0 @@
-projectKey=pruebajavi
-serverUrl=http://localhost:9000
-serverVersion=10.6.0.92116
-dashboardUrl=http://localhost:9000/dashboard?id=pruebajavi
-ceTaskId=98e215ea-0c9c-48c9-b263-7ef306d7300e
-ceTaskUrl=http://localhost:9000/api/ce/task?id=98e215ea-0c9c-48c9-b263-7ef306d7300e
