@@ -1,1 +1,23 @@
+name: Main CI Pipeline
 
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+#otorgar permisos
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+  actions: read
+  security-events: write
+  packages: write
+
+jobs:
+  build:
+    name: Build
+    uses:
+    secrets: 
